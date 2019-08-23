@@ -82,6 +82,9 @@
     <Compile Include="UserControls\ScheduleUC.xaml.cs">
       <DependentUpon>ScheduleUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SettingUC.xaml.cs">
+      <DependentUpon>SettingUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -135,7 +138,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\StudyMaterialsUC.xaml">
+    <Page Include="UserControls\SettingUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
