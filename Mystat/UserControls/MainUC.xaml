@@ -5,8 +5,59 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mystat.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1024">
     <Grid>
-            
+        <StackPanel >
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <WrapPanel>
+                    <StackPanel>
+                        <Grid Width="290" Height="150" Background="Blue">
+                            <Label Foreground="White">salam</Label>
+                        </Grid>
+                        <Grid Width="290" Height="150" Background="Yellow"
+                      Margin="0 20 0 0">
+                            <Label Foreground="White">salam</Label>
+                        </Grid>
+                    </StackPanel>
+                    <Grid Width="290" Height="320" Background="Green"
+                  Margin="20 0 0 0">
+                        <Label Foreground="White">Leaders</Label>
+                    </Grid>
+
+                    <Grid Width="290" Height="320" Background="red"
+                  Margin="20 0 0 0">
+                        <Label Foreground="White">Rewards</Label>
+                    </Grid>
+                </WrapPanel>
+            </StackPanel>
+            <WrapPanel Margin="10">
+                <Grid Height="300" Background="AliceBlue" Width="450">
+                    <Label Foreground="Black">Progress</Label>
+                </Grid>
+
+                <Grid Margin="10 0 0 0" Height="300" Background="BlueViolet" Width="450">
+                    <Label Foreground="White">Attendance</Label>
+                </Grid>
+            </WrapPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <WrapPanel>
+
+                    <Grid Width="290" Height="320" Background="Yellow">
+                        <Label Foreground="White">salam</Label>
+                    </Grid>
+                    <Grid Width="290" Height="320" Background="Green"
+                  Margin="20 0 0 0">
+                        <Label Foreground="White">Leaders</Label>
+                    </Grid>
+
+                    <Grid Width="290" Height="320" Background="red"
+                  Margin="20 0 0 0">
+                        <Label Foreground="White">Rewards</Label>
+                    </Grid>
+                </WrapPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

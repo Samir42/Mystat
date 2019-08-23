@@ -63,7 +63,7 @@
     <Style x:Key="GeneralContactBorderStyle" TargetType="Border">
         <Setter Property="Background" Value="#FFF"/>
         <Setter Property="Margin" Value="0 0 10 10"/>
-        <Setter Property="Width" Value="280"/>
+        <Setter Property="Width" Value="290"/>
         <Setter Property="BorderBrush" Value="Red"/>
         <Setter Property="BorderThickness" Value="2"/>
     </Style>
