@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mystat.UserControls"
+             xmlns:suc="clr-namespace:Mystat.UserControls.SimpleUserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1024">
     <Grid>
@@ -11,23 +12,91 @@
             <StackPanel Orientation="Horizontal" Margin="10">
                 <WrapPanel>
                     <StackPanel>
-                        <Grid Width="290" Height="150" Background="Blue">
-                            <Label Foreground="White">salam</Label>
-                        </Grid>
-                        <Grid Width="290" Height="150" Background="Yellow"
-                      Margin="0 20 0 0">
-                            <Label Foreground="White">salam</Label>
-                        </Grid>
-                    </StackPanel>
-                    <Grid Width="290" Height="320" Background="Green"
-                  Margin="20 0 0 0">
-                        <Label Foreground="White">Leaders</Label>
-                    </Grid>
+                        <Border Width="290" Height="200" Background="White">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#E0E5E9"/>
+                            </Border.Effect>
 
-                    <Grid Width="290" Height="320" Background="red"
+                            <StackPanel Margin="10">
+                                <Label FontSize="23">Rating</Label>
+                                <Separator Width="260"/>
+                                <Grid Height="140" Background="Black" Margin="5" RenderOptions.EdgeMode="Aliased">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <StackPanel Grid.Column="0" Background="White">
+                                        <Label FontSize="40" Margin="30 0 0 0" Foreground="#6376BF">2</Label>
+                                        <TextBlock Margin="30 0 0 0" FontSize="20">
+                                            Position in <LineBreak /> the Group
+                                        </TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" Background="White">
+                                        <Label FontSize="40" Foreground="#6376BF">2</Label>
+                                        <TextBlock FontSize="20">
+                                            Position in <LineBreak /> the Class
+                                        </TextBlock>
+                                    </StackPanel>
+
+                                </Grid>
+
+                            </StackPanel>
+                        </Border>
+                        <Border Width="290" Height="200" Background="#1BD2C7"
+                      Margin="0 20 0 0">
+                            <Border Margin="10" BorderThickness="1" BorderBrush="White">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+                                    
+                                    <!--I have to add icon from MaterialDesign-->
+                                    <Label Grid.Column="0" VerticalAlignment="Center" Foreground="White" Width="200" HorizontalAlignment="Right">
+                                        <AccessText TextWrapping="WrapWithOverflow">
+                                            Get More Rewards and Increase your Ranking
+                                        </AccessText>
+                                    </Label>
+                                </Grid>
+                            </Border>
+                        </Border>
+                    </StackPanel>
+                    
+                    
+                    <Border Width="290" Height="420" Background="White"
                   Margin="20 0 0 0">
-                        <Label Foreground="White">Rewards</Label>
-                    </Grid>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#E0E5E9"/>
+                        </Border.Effect>
+
+                        <StackPanel Margin="10">
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="23" Margin="0 0 60 0">Leaders</Label>
+                                <WrapPanel VerticalAlignment="Bottom">
+                                    <Label Foreground="#E0E5E9">Group</Label>
+                                    <Label>Class</Label>
+                                </WrapPanel>
+                            </StackPanel>
+                            <Separator />
+                        </StackPanel>
+
+                    </Border>
+
+                    <Border Width="290" Height="420" Background="White"
+                  Margin="20 0 0 0">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#E0E5E9"/>
+                        </Border.Effect>
+
+                        <StackPanel Margin="10">
+                            <Label FontSize="23">Your Rewards</Label>
+                            <Separator/>
+                        </StackPanel>
+                    </Border>
                 </WrapPanel>
             </StackPanel>
             <WrapPanel Margin="10">
@@ -44,9 +113,26 @@
             <StackPanel Orientation="Horizontal" Margin="10">
                 <WrapPanel>
 
-                    <Grid Width="290" Height="320" Background="Yellow">
-                        <Label Foreground="White">salam</Label>
-                    </Grid>
+                    <Border Width="290" Height="320" Background="White">
+                        <Border.Effect>
+                            <DropShadowEffect  Color="#E0E5E9"/>
+                        </Border.Effect>
+                        <StackPanel Margin="10">
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="23" Margin="0 0 90 0">Homework</Label>
+                                <StackPanel VerticalAlignment="Bottom">
+                                    <Label Foreground="#E0E5E9">More</Label>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <Label FontSize="40" HorizontalAlignment="Center">5</Label>
+                            <Label HorizontalAlignment="Center">All Tasks</Label>
+
+                            <!--<StackPanel Margin="30" Background="Gray" Height="150">
+                            </StackPanel>-->
+                        </StackPanel>
+                        
+                    </Border>
                     <Grid Width="290" Height="320" Background="Green"
                   Margin="20 0 0 0">
                         <Label Foreground="White">Leaders</Label>

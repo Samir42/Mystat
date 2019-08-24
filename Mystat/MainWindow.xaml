@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1024" WindowStartupLocation="CenterScreen">
     <ScrollViewer>
-        <Grid>
+        <Grid Background="#F1F6FA">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="15*"/>
@@ -29,143 +29,10 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
-                        <uc:SettingUC/>
+                        <uc:MainUC/>
                     </StackPanel>
                 </Grid>
 
-                <!--<Grid>
-                    <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition Height="6*" />
-                        </Grid.RowDefinitions>
-
-
-                        <Grid Grid.Row="0" Background="Black"></Grid>
-
-                        <Grid Grid.Row="1">
-                            <StackPanel Orientation="Horizontal" Margin="10 10 10 10">
-                                <StackPanel>
-
-
-
-                                    <Border Style="{StaticResource SpecialBorder}" Margin="0 5 0 25">
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition/>
-                                                <RowDefinition Height="3*"/>
-                                            </Grid.RowDefinitions>
-
-                                            <Grid Grid.Row="1">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition/>
-                                                </Grid.ColumnDefinitions>
-
-                                                <Grid Grid.Column="0">
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition/>
-                                                        <ColumnDefinition/>
-                                                    </Grid.ColumnDefinitions>
-
-                                                    <Grid Grid.Column="1">
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition />
-                                                            <RowDefinition Height="2* "/>
-                                                        </Grid.RowDefinitions>
-
-                                                        <Grid Grid.Row="1">
-                                                            <TextBlock>Position in
-                                                    <LineBreak />
-                                                     the Group
-                                                            </TextBlock>
-                                                        </Grid>
-                                                    </Grid>
-                                                </Grid>
-
-                                                <Grid Grid.Column="1">
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition/>
-                                                        <ColumnDefinition/>
-                                                    </Grid.ColumnDefinitions>
-
-                                                    <Grid Grid.Column="0">
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition />
-                                                            <RowDefinition Height="2* "/>
-                                                        </Grid.RowDefinitions>
-
-                                                        <Grid Grid.Row="1">
-                                                            <TextBlock>Position in
-                                                    <LineBreak />
-                                                     the Class
-                                                            </TextBlock>
-                                                        </Grid>
-                                                    </Grid>
-                                                </Grid>
-                                            </Grid>
-
-                                            <Grid Grid.Row="0">
-                                                <Label Style="{StaticResource ShortHeaderTitleBlock}">Rating</Label>
-                                                <Separator Style="{StaticResource LongHeaderSpearator}"/>
-                                            </Grid>
-                                        </Grid>
-                                    </Border>
-
-                                    <Border Style="{StaticResource SpecialBorder}" Background="#1ad2c6">
-                                        <Rectangle Margin="20" Fill="#1ad2c6" StrokeThickness="1" Stroke="White">
-
-                                        </Rectangle>
-                                    </Border>
-                                </StackPanel>
-
-
-
-                                <Grid Height="500">
-                                    <Border Style="{StaticResource GeneralBorderMargin}" Width="280">
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition/>
-                                                <RowDefinition Height="7*"/>
-                                            </Grid.RowDefinitions>
-
-                                            <Grid Grid.Row="0">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="2*"/>
-                                                    <ColumnDefinition/>
-                                                </Grid.ColumnDefinitions>
-
-                                                <Label Style="{StaticResource LongHeaderTitleBlock}">BOARD OF LEADERS</Label>
-                                            </Grid>
-                                            <Separator Style="{StaticResource ShortHeaderSpearator}"/>
-                                        </Grid>
-                                    </Border>
-                                </Grid>
-
-                                <Grid Height="500">
-                                    <Border Style="{StaticResource GeneralBorderMargin}" Width="240">
-                                        <Grid>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition/>
-                                                <RowDefinition Height="7*"/>
-                                            </Grid.RowDefinitions>
-
-                                            <Grid Grid.Row="0">
-                                                <Label Style="{StaticResource LongHeaderTitleBlock}">YOUR REWARDS</Label>
-                                            </Grid>
-                                            <Separator Style="{StaticResource ShortHeaderSpearator}" />
-                                        </Grid>
-                                    </Border>
-                                </Grid>
-                            </StackPanel>
-                        </Grid>
-
-                    </Grid>
-
-
-
-
-                </Grid>-->
             </StackPanel>
         </Grid>
     </ScrollViewer>
