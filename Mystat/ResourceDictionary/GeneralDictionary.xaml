@@ -1,6 +1,18 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Mystat.ResourceDictionary">
+    <!--#region  Main UC-->
+    <Style x:Key="HeaderLabelMainUC" TargetType="Label">
+        <Setter Property="FontSize" Value="23" />
+    </Style>
+
+    <Style x:Key="GrayLabelMainUC" TargetType="Label">
+        <Setter Property="Foreground" Value="#E0E5E9" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <!--#endregion-->
+
+
     <!--#region Contact UC -->
 
     <Style x:Key="ContactButton" TargetType="Button">
@@ -9,7 +21,7 @@
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Margin" Value="0 10 15 10"/>
     </Style>
-    
+
     <Style x:Key="GeneralContactTextboxMargin" TargetType="TextBox">
         <Setter Property="Margin" Value="0 10 0 10"/>
     </Style>
@@ -24,10 +36,10 @@
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="250"/>
     </Style>
-    
-    
-    
-    
+
+
+
+
     <Style x:Key="Header Label" TargetType="Label">
         <Setter Property="Foreground" Value="#000"/>
         <Setter Property="Padding" Value="20 20 0 0"/>
@@ -76,11 +88,7 @@
     </Style>
 
     <!--#endregion-->
-    
-    
-    
-    
-    
+
     <Style x:Key="GeneralStyleForHeaderLabel" TargetType="Label">
         <Setter Property="Foreground" Value="#29313f"/>
         <Setter Property="Padding" Value="25 0 0 0" />
@@ -96,7 +104,7 @@
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
-    
+
     <!--<Style x:Key="GeneralHeaderSpearator" TargetType="Separator">
         <Setter Property="VerticalAlignment" Value="Bottom"/>
         <Setter Property="Height" Value="4"/>
@@ -119,8 +127,8 @@
     <Style TargetType="Label">
         <Setter Property="FontSize" Value="18"/>
     </Style>
-    
-    
+
+
     <Style x:Key="GeneralBorderMargin" TargetType="Border">
         <Setter Property="Margin" Value="10 -20 0 20"/>
         <Setter Property="BorderThickness" Value="1"/>

@@ -18,7 +18,7 @@
                             </Border.Effect>
 
                             <StackPanel Margin="10">
-                                <Label FontSize="23">Rating</Label>
+                                <Label Style="{StaticResource HeaderLabelMainUC}">Rating</Label>
                                 <Separator Width="260"/>
                                 <Grid Height="140" Background="Black" Margin="5" RenderOptions.EdgeMode="Aliased">
                                     <Grid.ColumnDefinitions>
@@ -47,6 +47,10 @@
                         </Border>
                         <Border Width="290" Height="200" Background="#1BD2C7"
                       Margin="0 20 0 0">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#E0E5E9"/>
+                                </Border.Effect>
+                                
                             <Border Margin="10" BorderThickness="1" BorderBrush="White">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -75,9 +79,9 @@
 
                         <StackPanel Margin="10">
                             <StackPanel Orientation="Horizontal">
-                                <Label FontSize="23" Margin="0 0 60 0">Leaders</Label>
+                                <Label Style="{StaticResource HeaderLabelMainUC}" Margin="0 0 60 0">Leaders</Label>
                                 <WrapPanel VerticalAlignment="Bottom">
-                                    <Label Foreground="#E0E5E9">Group</Label>
+                                    <Label Style="{StaticResource GrayLabelMainUC}">Group</Label>
                                     <Label>Class</Label>
                                 </WrapPanel>
                             </StackPanel>
@@ -93,7 +97,7 @@
                         </Border.Effect>
 
                         <StackPanel Margin="10">
-                            <Label FontSize="23">Your Rewards</Label>
+                            <Label Style="{StaticResource HeaderLabelMainUC}">Your Rewards</Label>
                             <Separator/>
                         </StackPanel>
                     </Border>
@@ -119,29 +123,111 @@
                         </Border.Effect>
                         <StackPanel Margin="10">
                             <StackPanel Orientation="Horizontal">
-                                <Label FontSize="23" Margin="0 0 90 0">Homework</Label>
+                                <Label Style="{StaticResource HeaderLabelMainUC}" Margin="0 0 90 0">Homework</Label>
+                                <!--Have to add icon   - > Left Icon-->
                                 <StackPanel VerticalAlignment="Bottom">
-                                    <Label Foreground="#E0E5E9">More</Label>
+                                    <Label Style="{StaticResource GrayLabelMainUC}">More</Label>
                                 </StackPanel>
                             </StackPanel>
 
-                            <Label FontSize="40" HorizontalAlignment="Center">5</Label>
+                            <Label FontSize="40" HorizontalAlignment="Center" Foreground="#6376BF">5</Label>
                             <Label HorizontalAlignment="Center">All Tasks</Label>
 
-                            <!--<StackPanel Margin="30" Background="Gray" Height="150">
-                            </StackPanel>-->
+                            <StackPanel Margin="30" Background="#F5F8FA" Height="150">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <StackPanel Grid.Column="0" Grid.Row="0">
+                                        <!--Must bind-->
+                                        <Label Foreground="#FA5873">0</Label>
+                                        <Label>Current</Label>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="0" Grid.Row="1">
+                                        <!--Must bind-->
+                                        <Label Foreground="#1ACCC1">0</Label>
+                                        <Label FontSize="15">Under Review</Label>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" Grid.Row="0">
+                                        <!--Must bind-->
+                                        <Label Foreground="#FFC730">0</Label>
+                                        <Label>Reviewed</Label>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" Grid.Row="1">
+                                        <!--Must bind-->
+                                        <Label Foreground="#AA91FC">0</Label>
+                                        <Label>Overdue</Label>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
                         </StackPanel>
                         
                     </Border>
-                    <Grid Width="290" Height="320" Background="Green"
+                    <Border Width="290" Height="320" Background="White"
                   Margin="20 0 0 0">
-                        <Label Foreground="White">Leaders</Label>
-                    </Grid>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#E0E5E9"/>
+                        </Border.Effect>
 
-                    <Grid Width="290" Height="320" Background="red"
+
+                        <StackPanel Margin="10">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Style="{StaticResource HeaderLabelMainUC}" Margin="0 0 50 0">Study Materials</Label>
+                                <!--Have to add icon   - > Left Icon-->
+                                <StackPanel VerticalAlignment="Bottom">
+                                    <Label Style="{StaticResource GrayLabelMainUC}">More</Label>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <Label Foreground="#5A5F62">Library</Label>
+                                    <Label Foreground="#5A5F62">Lessons</Label>
+                                    <Label Foreground="#5A5F62">Videos</Label>
+                                    <Label Foreground="#5A5F62">Presentations</Label>
+                                    <Label Foreground="#5A5F62">Tests</Label>
+                                    <Label Foreground="#5A5F62">Articles</Label>
+                                    <Label Foreground="#5A5F62">Self Study</Label>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1">
+                                    <!--Numbers must bind--> 
+                                    <Label Foreground="#5A5F62">0</Label>
+                                    <Label Foreground="#5A5F62">0</Label>
+                                    <Label Foreground="#5A5F62">0</Label>
+                                    <Label Foreground="#5A5F62">0</Label>
+                                    <Label Foreground="#5A5F62">0</Label>
+                                    <Label Foreground="#5A5F62">0</Label>
+                                    <Label Foreground="#5A5F62">0</Label>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Width="290" Height="320" Background="White"
                   Margin="20 0 0 0">
-                        <Label Foreground="White">Rewards</Label>
-                    </Grid>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#E0E5E9"/>
+                        </Border.Effect>
+                        <StackPanel Margin="10">
+                            <Label Style="{StaticResource HeaderLabelMainUC}">Rewards</Label>
+                        </StackPanel>
+                    </Border>
                 </WrapPanel>
             </StackPanel>
         </StackPanel>
