@@ -6,12 +6,15 @@
              xmlns:local="clr-namespace:Mystat.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1024">
-    <Grid>
+    <Grid Background="#F1F6FA">
         <StackPanel Margin="20">
-            <Label FontSize="25">Payment Information</Label>
+            <Label Style="{StaticResource HeaderLabel}">Payment Information</Label>
 
             <WrapPanel>
-                <Border Width="500" Height="200">
+                <Border Width="500" Height="200" Background="White">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
                     <Grid Margin="30">
                         <Border Height="30" Background="Yellow" VerticalAlignment="Top"></Border>
                         <!--Must bind-->

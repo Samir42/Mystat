@@ -6,13 +6,16 @@
              xmlns:local="clr-namespace:Mystat.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1024">
-    <Grid>
+    <Grid Background="#F1F6FA">
         <StackPanel Margin="10">
-            <Label Foreground="Black" FontSize="25" Margin="0 0 0 20">News</Label>
+            <Label Style="{StaticResource HeaderLabel}" Margin="-10 0 0 20">News</Label>
 
             <WrapPanel Width="1024">
                 <Border Height="200" Width="290" Margin="0 0 0 20"
-                        BorderThickness="0 3 0 3" BorderBrush="Green">
+                        Background="White" BorderThickness="0 3 0 0" BorderBrush="#28D4CA">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
 
                     <Grid Margin="10">
                         <Label Foreground="Black">
@@ -27,8 +30,10 @@
 
                 </Border>
                 <Border Height="200" Width="290"  Margin="20 0 0 20"
-                        BorderThickness="0 3 0 3" BorderBrush="Green">
-
+                        Background="White" BorderThickness="0 3 0 0" BorderBrush="#28D4CA">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
                     <Grid Margin="10">
                         <Label Foreground="Black">
                             <AccessText TextWrapping="WrapWithOverflow">
@@ -43,8 +48,10 @@
                 </Border>
 
                 <Border Height="200" Width="290"  Margin="20 0 0 20"
-                        BorderThickness="0 3 0 3" BorderBrush="Green">
-
+                        Background="White" BorderThickness="0 3 0 0" BorderBrush="#28D4CA">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
                     <Grid Margin="10">
                         <Label Foreground="Black">
                             <AccessText TextWrapping="WrapWithOverflow">
@@ -59,8 +66,10 @@
                 </Border>
 
                 <Border Height="200" Width="290" Margin="0 0 0 20"
-                        BorderThickness="0 3 0 3" BorderBrush="Green">
-
+                        Background="White" BorderThickness="0 3 0 0" BorderBrush="#28D4CA">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
                     <Grid Margin="10">
                         <Label Foreground="Black">
                             <AccessText TextWrapping="WrapWithOverflow">
@@ -74,8 +83,10 @@
 
                 </Border>
                 <Border Height="200" Width="290"  Margin="20 0 0 20"
-                        BorderThickness="0 3 0 3" BorderBrush="Green">
-
+                      Background="White"   BorderThickness="0 3 0 0" BorderBrush="#28D4CA">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
                     <Grid Margin="10">
                         <Label Foreground="Black">
                             <AccessText TextWrapping="WrapWithOverflow">
@@ -88,71 +99,7 @@
                     </Grid>
 
                 </Border>
-
-                <Border Height="200" Width="290"  Margin="20 0 0 20"
-                        BorderThickness="0 3 0 3" BorderBrush="Green">
-
-                    <Grid Margin="10">
-                        <Label Foreground="Black">
-                            <AccessText TextWrapping="WrapWithOverflow">
-                                Avqustun 12-den 25-e kimi akademiya bagli olacaq
-                            </AccessText>
-                        </Label>
-
-
-                        <Label VerticalAlignment="Bottom" Foreground="Black">17 avgust</Label>
-                    </Grid>
-
-                </Border>
-
-                <Border Height="200" Width="290" Margin="0 0 0 20"
-                        BorderThickness="0 3 0 3" BorderBrush="Green">
-
-                    <Grid Margin="10">
-                        <Label Foreground="Black">
-                            <AccessText TextWrapping="WrapWithOverflow">
-                                Avqustun 12-den 25-e kimi akademiya bagli olacaq
-                            </AccessText>
-                        </Label>
-
-
-                        <Label VerticalAlignment="Bottom" Foreground="Black">17 avgust</Label>
-                    </Grid>
-
-                </Border>
-                <Border Height="200" Width="290"  Margin="20 0 0 20"
-                        BorderThickness="0 3 0 3" BorderBrush="Green">
-
-                    <Grid Margin="10">
-                        <Label Foreground="Black">
-                            <AccessText TextWrapping="WrapWithOverflow">
-                                Avqustun 12-den 25-e kimi akademiya bagli olacaq
-                            </AccessText>
-                        </Label>
-
-
-                        <Label VerticalAlignment="Bottom" Foreground="Black">17 avgust</Label>
-                    </Grid>
-
-                </Border>
-
-                <Border Height="200" Width="290"  Margin="20 0 0 20"
-                        BorderThickness="0 3 0 3" BorderBrush="Green">
-
-                    <Grid Margin="10">
-                        <Label Foreground="Black">
-                            <AccessText TextWrapping="WrapWithOverflow">
-                                Avqustun 12-den 25-e kimi akademiya bagli olacaq
-                            </AccessText>
-                        </Label>
-
-
-                        <Label VerticalAlignment="Bottom" Foreground="Black">17 avgust</Label>
-                    </Grid>
-
-                </Border>
-
-
+             
             </WrapPanel>
         </StackPanel>
     </Grid>

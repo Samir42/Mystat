@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Mystat.UserControls"
              xmlns:suc="clr-namespace:Mystat.UserControls.SimpleUserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1024">
+             d:DesignHeight="700" d:DesignWidth="1024">
     <Grid>
         <StackPanel >
             <StackPanel Orientation="Horizontal" Margin="10">

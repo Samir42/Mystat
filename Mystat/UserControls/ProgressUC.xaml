@@ -5,8 +5,337 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mystat.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="700" d:DesignWidth="1024">
+    <Grid Background="#F1F6FA">
+        <StackPanel Margin="20" Background="White">
+            <Label Style="{StaticResource HeaderLabel}" Margin="-20 0 0 20">Progress</Label>
+
+            <StackPanel Margin="3">
+                <ComboBox 
+                    HorizontalAlignment="Left"
+                    FontSize="13"
+                    Style="{StaticResource theComboBox}"
+                    Padding="15,5,15,5"
+                    HorizontalContentAlignment="Left"
+                    VerticalAlignment="Center"
+                    Width="250"
+                                    Height="40"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    ItemContainerStyle="{StaticResource theComboBoxItem}">
+                    <ComboBoxItem>Available</ComboBoxItem>
+                    <ComboBoxItem>Busy</ComboBoxItem>
+                    <ComboBoxItem>On Duty</ComboBoxItem>
+                    <ComboBoxItem>On Meeting</ComboBoxItem>
+                    <ComboBoxItem>On Vacation</ComboBoxItem>
+                    <ComboBoxItem>On Weekend</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+
+            <StackPanel Margin="3 10 0 0" Orientation="Horizontal">
+                <Border Height="20" Width="20" Background="#FFAAAA"></Border>
+                <Label Margin="0 0 20 0">Absence</Label>
+                <Border Height="20" Width="20" Background="#FFFA7B"></Border>
+                <Label>Late</Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="0 0 30 0">Grade:</Label>
+                <Border Margin="0 3 0 0" Height="15" Width="15" Background="#1BD2C7"></Border>
+                <Label Margin="0 0 20 0">Homework</Label>
+                <Border Margin="0 3 0 0" Height="15" Width="15" Background="#62B6FE"></Border>
+                <Label Margin="0 0 20 0">Labs</Label>
+                <Border Margin="0 3 0 0" Height="15" Width="15" Background="#FFC730"></Border>
+                <Label Margin="0 0 20 0">Classwork</Label>
+                <Border Margin="0 3 0 0" Height="15" Width="15" Background="#AA91FC"></Border>
+                <Label Margin="0 0 20 0">Review Work</Label>
+            </StackPanel>
+            <WrapPanel Width="945">
+                <Border Opacity="0.5"  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#FFAAAA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+
+
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#FFAAAA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+
+
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#FFAAAA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+
+
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#FFAAAA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+
+
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#FFAAAA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+
+
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#F1F6FA">
+                    <Grid>
+
+                        <!--Tarix dbden gelmelidir Must Bind-->
+                        <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
+
+                        <Border Margin="0 0 2 2" Height="25" Width="25" Background="#1BD2C7" VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Right">
+                            <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
+                        </Border>
+
+                    </Grid>
+                </Border>
+            </WrapPanel>
             
+            <StackPanel></StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

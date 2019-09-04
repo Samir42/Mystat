@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mystat"
+        
         xmlns:uc="clr-namespace:Mystat.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1024" WindowStartupLocation="CenterScreen">
@@ -29,7 +30,7 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
-                        <uc:MainUC/>
+                        <uc:ProgressUC/>
                     </StackPanel>
                 </Grid>
 

@@ -3,74 +3,108 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:Mystat.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1024">
-        <Grid Background="White">
-            <StackPanel>
-                <Label Style="{StaticResource Header Label}">Contact Info</Label>
+    <Grid Background="#F1F6FA">
+        <StackPanel>
+            <Label Style="{StaticResource HeaderLabel}">Contact Info</Label>
 
 
-                <StackPanel Orientation="Horizontal" Margin="10">
-                    <Border  Style="{StaticResource FirstRowContactBorderStyle}">
-                        <Grid>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Border  Style="{StaticResource FirstRowContactBorderStyle}">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
+                    <Grid>
 
-                            <!--Divide into 2 place-->
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="0.5*"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
+                        <!--Divide into 2 place-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
 
-                            <!--Reception office-->
-                            <StackPanel Grid.Row="0">
-                                <Label Style="{StaticResource SecondaryHeaderLabel}">Reception Office</Label>
+                        <!--Reception office-->
+                        <StackPanel Grid.Row="0">
+                            <Label Style="{StaticResource SecondaryHeaderLabel}">Reception Office</Label>
+                        </StackPanel>
+
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Location" Width="30" Height="30" Foreground="#FFC730" Margin="20 0 0 0"/>
+                                <Label Margin="10 0 0 0" Style="{StaticResource TopSimpleContactLabelAlign}" Content="Koroglu"></Label>
                             </StackPanel>
 
-                            <Grid Grid.Row="1">
-                                <Label Style="{StaticResource TopSimpleContactLabelAlign}" Content="Koroglu"></Label>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                                <materialDesign:PackIcon Kind="Phone" Width="30" Height="30" Foreground="#6BE2DB" Margin="20 0 0 0"/>
+                                <Label Margin="10 0 0 0" Style="{StaticResource BottomSimpleContactLabelAlgin}" Content="+994 55 555 22 11"></Label>
 
-                                <Label Style="{StaticResource BottomSimpleContactLabelAlgin}" Content="+994"></Label>
-                            </Grid>
-                        </Grid>
-                    </Border>
-                    <Border Style="{StaticResource FirstRowContactBorderStyle}">
-                        <Grid>
-
-                            <!--Divide into 2 place-->
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="0.5*"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-
-                            <!--Educational unit-->
-                            <StackPanel Grid.Row="0">
-                                <Label Style="{StaticResource SecondaryHeaderLabel}">Educational unit</Label>
                             </StackPanel>
-
-
-                            <Grid Grid.Row="1">
-                                <Label Style="{StaticResource TopSimpleContactLabelAlign}" Content="itstep.az"></Label>
-
-                                <Label Style="{StaticResource CenterSimpleContactLabelAlign}" Content="+994"></Label>
-
-                                <Label Style="{StaticResource BottomSimpleContactLabelAlgin}" Content="office@itstep.org"></Label>
-
-
-                            </Grid>
                         </Grid>
-                    </Border>
-                    <Border  Style="{StaticResource FirstRowContactBorderStyle}" Height="150">
-                    </Border>
-                   
-                </StackPanel>
+                    </Grid>
+                </Border>
+                <Border Style="{StaticResource FirstRowContactBorderStyle}">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
+                    <Grid>
+
+                        <!--Divide into 2 place-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <!--Educational unit-->
+                        <StackPanel Grid.Row="0">
+                            <Label Style="{StaticResource SecondaryHeaderLabel}">Educational unit</Label>
+                        </StackPanel>
+
+
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Home" Width="30" Height="30" Foreground="#FFC730" Margin="20 0 0 0"/>
+                                <Label Margin="10 0 0 0" Style="{StaticResource TopSimpleContactLabelAlign}" Content="itstep.az"></Label>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                                <materialDesign:PackIcon Kind="Phone" Width="30" Height="30" Foreground="#6BE2DB" Margin="20 0 0 0"/>
+                                <Label Margin="10 0 0 0" Style="{StaticResource CenterSimpleContactLabelAlign}" Content="+994 51 420 90 11"></Label>
+
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Border  Style="{StaticResource FirstRowContactBorderStyle}" Height="150">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
+                    <StackPanel>
+                        <Label HorizontalAlignment="Center" Margin="0 20 0 0" Style="{StaticResource SecondaryHeaderLabel}">academy in social networks</Label>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 30 0 0">
+
+                            <Button Background="{x:Null}" Cursor="Hand" BorderBrush="{x:Null}" Padding="0" Width="40" Height="40" Margin="10">
+                                <materialDesign:PackIcon Kind="Facebook" Width="40" Height="40" Foreground="#295396"/>
+                            </Button>
+                            <Button Background="{x:Null}" Cursor="Hand" BorderBrush="{x:Null}" Padding="0" Width="40" Height="40" Margin="10">
+                                <materialDesign:PackIcon Kind="Instagram" Width="40" Height="40" Foreground="#4F5A66"/>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
 
 
 
-                <StackPanel Orientation="Horizontal" Margin="20">
-                    <!--<Border Style="{StaticResource SecondRowContactBorderStyle}">
+            <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                <!--<Border Style="{StaticResource SecondRowContactBorderStyle}">
                         <Grid>
 
-                            --><!--Divide into 2 place--><!--
+                            -->
+                <!--Divide into 2 place-->
+                <!--
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="0.1*"/>
                                 <RowDefinition/>
@@ -80,39 +114,43 @@
                                 <Label  Style="{StaticResource SecondaryHeaderLabel}">Contact the teacher</Label>
                             </StackPanel>
 
-                            --><!--<StackPanel Grid.Row="1">
+                            -->
+                <!--<StackPanel Grid.Row="1">
                                 <TextBox Style="{StaticResource ContactTextbox}"></TextBox>
                                 <TextBox Style="{StaticResource ContactTextbox}"></TextBox>
                                 <RichTextBox Style="{StaticResource ContactRichTextbox}"></RichTextBox>
                                 <Button Style="{StaticResource ContactButton}"></Button>
-                            </StackPanel>--><!--
+                            </StackPanel>-->
+                <!--
 
                         </Grid>
                     </Border>-->
 
-                    <Border Style="{StaticResource SecondRowContactBorderStyle}">
-                        <Grid>
+                <Border Style="{StaticResource SecondRowContactBorderStyle}">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#E0E5E9"/>
+                    </Border.Effect>
+                    <Grid>
 
-                            <!--Divide into 2 place-->
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="0.1*"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
+                        <!--Divide into 2 place-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
 
-                            <StackPanel Grid.Row="0">
-                                <Label Style="{StaticResource SecondaryHeaderLabel}">WRITE TO DIRECTOR</Label>
-                            </StackPanel>
+                        <StackPanel Grid.Row="0">
+                            <Label Style="{StaticResource SecondaryHeaderLabel}">WRITE TO DIRECTOR</Label>
+                        </StackPanel>
 
-                            <StackPanel Grid.Row="1">
-                                <TextBox Style="{StaticResource ContactTextbox}"></TextBox>
-                                <TextBox Style="{StaticResource ContactTextbox}"></TextBox>
-                                <RichTextBox Style="{StaticResource ContactRichTextbox}"></RichTextBox>
-                                <Button Style="{StaticResource ContactButton}">Send</Button>
-                            </StackPanel>
+                        <StackPanel Grid.Row="1">
+                            <TextBox Style="{StaticResource ContactTextbox}"></TextBox>
+                            <RichTextBox Style="{StaticResource ContactRichTextbox}"></RichTextBox>
+                            <Button Style="{StaticResource ContactButton}">Send</Button>
+                        </StackPanel>
 
-                        </Grid>
-                    </Border>
-                </StackPanel>
+                    </Grid>
+                </Border>
             </StackPanel>
-        </Grid>
+        </StackPanel>
+    </Grid>
 </UserControl>
