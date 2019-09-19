@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Mystat.UserControls
 {
     /// <summary>
-    /// Interaction logic for ScheduleUC.xaml
+    /// Interaction logic for ReviewedHomeworkItemUC.xaml
     /// </summary>
-    public partial class ScheduleUC : UserControl
+    public partial class ReviewedHomeworkItemUC : UserControl
     {
-        public ScheduleUC()
+        public ReviewedHomeworkItemUC()
         {
             InitializeComponent();
         }

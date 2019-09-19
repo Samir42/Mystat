@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Mystat.UserControls;
+using Mystat.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,28 @@ namespace Mystat
         public MainWindow()
         {
             InitializeComponent();
+            MainWindowViewModel vm = new MainWindowViewModel();
+            vm.MainGrid = Bottom;
+
+            Bottom.Children.Clear();
+            MainUC uc = new MainUC();
+            MainViewModel mvm = new MainViewModel();
+            uc.DataContext = mvm;
+            Bottom.Children.Add(uc);
+
+            this.DataContext = vm;
+        }
+        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonCloseMenu.Visibility = Visibility.Visible;
+            ButtonOpenMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonCloseMenu.Visibility = Visibility.Collapsed;
+            ButtonOpenMenu.Visibility = Visibility.Visible;
         }
     }
+
 }

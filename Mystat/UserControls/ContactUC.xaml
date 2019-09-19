@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1024">
     <Grid Background="#F1F6FA">
-        <StackPanel>
+        <StackPanel Background="White" Margin="0 20 20 20">
             <Label Style="{StaticResource HeaderLabel}">Contact Info</Label>
 
 
@@ -143,9 +143,13 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="1">
-                            <TextBox Style="{StaticResource ContactTextbox}"></TextBox>
-                            <RichTextBox Style="{StaticResource ContactRichTextbox}"></RichTextBox>
-                            <Button Style="{StaticResource ContactButton}">Send</Button>
+                            <TextBox Style="{StaticResource SettingTextbox}" Tag="Subject" 
+                                     Text="{Binding Subject,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="250" Height="30" FontSize="18"
+                                     Margin="0 10"></TextBox>
+                            <TextBox  Style="{StaticResource SettingTextbox}" Tag="Body"  
+                                      Text="{Binding Body,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="80" Width="250"
+                                      Margin="0 10" FontSize="18"></TextBox>
+                            <Button Style="{StaticResource ContactButton}" Command="{Binding SendMailCommand}">Send</Button>
                         </StackPanel>
 
                     </Grid>

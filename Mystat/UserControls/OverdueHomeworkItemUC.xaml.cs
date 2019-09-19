@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mystat.UserControls.SimpleUserControls
+namespace Mystat.UserControls
 {
     /// <summary>
-    /// Interaction logic for PersonalInfoUC.xaml
+    /// Interaction logic for OverdueHomeworkItemUC.xaml
     /// </summary>
-    public partial class PersonalInfoUC : UserControl
+    public partial class OverdueHomeworkItemUC : UserControl
     {
-        public PersonalInfoUC()
+        public OverdueHomeworkItemUC()
         {
             InitializeComponent();
         }

@@ -3,16 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+       
+             
              xmlns:local="clr-namespace:Mystat.UserControls"
-             xmlns:suc="clr-namespace:Mystat.UserControls.SimpleUserControls"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="1024">
-    <Grid>
-        <StackPanel >
-            <StackPanel Orientation="Horizontal" Margin="10">
+    <UserControl.Resources>
+        <Style x:Key="ListViewItemStyle1" TargetType="{x:Type ListViewItem}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer>
+        <Grid Background="#F1F6FA" Width="980">
+        <StackPanel Margin="-5 20 0 0">
+            <StackPanel Orientation="Horizontal">
                 <WrapPanel>
                     <StackPanel>
-                        <Border Width="290" Height="200" Background="White">
+                        <Border  Margin="0 0 0 0" Width="290" Height="200" Background="White">
                             <Border.Effect>
                                 <DropShadowEffect Color="#E0E5E9"/>
                             </Border.Effect>
@@ -28,7 +45,7 @@
 
 
                                     <StackPanel Grid.Column="0" Background="White">
-                                        <Label FontSize="40" Margin="30 0 0 0" Foreground="#6376BF">2</Label>
+                                        <Label FontSize="40" Margin="30 0 0 0" Foreground="#6376BF" Content="{Binding PositionInTheGroup}"></Label>
                                         <TextBlock Margin="30 0 0 0" FontSize="20">
                                             Position in <LineBreak /> the Group
                                         </TextBlock>
@@ -45,12 +62,12 @@
 
                             </StackPanel>
                         </Border>
-                        <Border Width="290" Height="200" Background="#1BD2C7"
-                      Margin="0 20 0 0">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="#E0E5E9"/>
-                                </Border.Effect>
-                                
+                        <Border  Width="290" Height="200" Background="#1BD2C7"
+                      Margin="10 20 0 0">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#E0E5E9"/>
+                            </Border.Effect>
+
                             <Border Margin="10" BorderThickness="1" BorderBrush="White">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -58,7 +75,7 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
 
-                                    
+
                                     <!--I have to add icon from MaterialDesign-->
                                     <Label Grid.Column="0" VerticalAlignment="Center" Foreground="White" Width="200" HorizontalAlignment="Right">
                                         <AccessText TextWrapping="WrapWithOverflow">
@@ -69,8 +86,8 @@
                             </Border>
                         </Border>
                     </StackPanel>
-                    
-                    
+
+
                     <Border Width="290" Height="420" Background="White"
                   Margin="20 0 0 0">
                         <Border.Effect>
@@ -81,11 +98,66 @@
                             <StackPanel Orientation="Horizontal">
                                 <Label Style="{StaticResource HeaderLabelMainUC}" Margin="0 0 60 0">Leaders</Label>
                                 <WrapPanel VerticalAlignment="Bottom">
-                                    <Label Style="{StaticResource GrayLabelMainUC}">Group</Label>
-                                    <Label>Class</Label>
+                                    <Label>Group</Label>
+                                    <Label Style="{StaticResource GrayLabelMainUC}">Class</Label>
                                 </WrapPanel>
                             </StackPanel>
                             <Separator />
+
+                            <ListView  Foreground="Black"
+                                    VerticalAlignment="Top" BorderThickness="0"
+                                       ItemsSource="{Binding Students,Mode=TwoWay}"
+                                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                       ItemContainerStyle="{StaticResource ListViewItemStyle1}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridView.ColumnHeaderContainerStyle>
+                                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                                                <Setter Property="Background" Value="Transparent" />
+                                                <Setter Property="Foreground" Value="Black" />
+                                                <Setter Property="IsHitTestVisible" Value="False"></Setter>
+                                                <Setter Property="Cursor" Value="IBeam" ></Setter>
+                                            </Style>
+                                        </GridView.ColumnHeaderContainerStyle>
+                                        <GridViewColumn Header="No" Width="30">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Cursor="IBeam"
+                                    Padding="5.0" Text="{Binding Id}"></TextBlock>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Fullname" Width="130">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Cursor="IBeam"
+                                    Padding="5.0" Text="{Binding Fullname}"></TextBlock>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Point" Width="100">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid  HorizontalAlignment="Right">
+
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition/>
+                                                            <ColumnDefinition/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <TextBlock Grid.Column="0" Cursor="IBeam" Margin="10 0 0 0"
+                                    Padding="5.0" Text="{Binding GeneralPoint}"></TextBlock>
+                                                        <materialDesign:PackIcon Grid.Column="1" Foreground="#A67AFA" Kind="Star" Width="25" Height="25" VerticalAlignment="Center"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
                         </StackPanel>
 
                     </Border>
@@ -99,14 +171,97 @@
                         <StackPanel Margin="10">
                             <Label Style="{StaticResource HeaderLabelMainUC}">Your Rewards</Label>
                             <Separator/>
+
+                            <ListView  Foreground="Black"
+                                    VerticalAlignment="Top" BorderThickness="0"
+                                       ItemsSource="{Binding Points,Mode=TwoWay}"
+                                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                       ItemContainerStyle="{StaticResource ListViewItemStyle1}"
+                                       >
+                                <ListView.View>
+                                    <GridView>
+                                        <GridView.ColumnHeaderContainerStyle>
+                                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                                                <Setter Property="Background" Value="Transparent" />
+                                                <Setter Property="Foreground" Value="Black" />
+                                                <Setter Property="IsHitTestVisible" Value="False"></Setter>
+                                                <Setter Property="Cursor" Value="IBeam" ></Setter>
+                                            </Style>
+                                        </GridView.ColumnHeaderContainerStyle>
+                                        <GridViewColumn Header="Reward"  Width="133">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel>
+                                                        <TextBlock Cursor="IBeam"
+                                    Padding="5.0"  Foreground="Gray" Text="{Binding Date,StringFormat=d}"></TextBlock>
+
+                                                        <TextBlock Cursor="IBeam"
+                                    Padding="5.0"  Foreground="Black" FontSize="18" Text="{Binding PointStatu.Status}"></TextBlock>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+
+                                        <GridViewColumn Header="Prize" Width="132">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Cursor="IBeam" FontSize="20" 
+                                    Padding="5.0" Text="{Binding Point1}" HorizontalAlignment="Center">
+                                                            <TextBlock.Style>
+                                                                <Style TargetType="TextBlock">
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding PointStatu.Status}" Value="Homework">
+                                                                            <Setter Property="Foreground" Value="#FFC730" />
+                                                                        </DataTrigger>
+                                                                        <DataTrigger Binding="{Binding PointStatu.Status}" Value="Attendance">
+                                                                            <Setter Property="Foreground" Value="#A67AFA" />
+                                                                        </DataTrigger>
+                                                                        <DataTrigger Binding="{Binding PointStatu.Status}" Value="Activity">
+                                                                            <Setter Property="Foreground" Value="#A67AFA" />
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Style>
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
                         </StackPanel>
                     </Border>
                 </WrapPanel>
             </StackPanel>
             <WrapPanel Margin="10">
-                <Grid Height="300" Background="AliceBlue" Width="450">
-                    <Label Foreground="Black">Progress</Label>
-                </Grid>
+                <Grid Height="300" Background="Red" Width="450">
+                        <DVC:Chart   Canvas.Top="80" Canvas.Left="10" Name="mcChart" 
+           Width="450" Height="300" 
+           Background="YellowGreen" Foreground="DarkBlue" 
+           Title="Area Chart">
+                            <DVC:Chart.Palette>
+                                <DV:ResourceDictionaryCollection>
+                                    <ResourceDictionary>
+                                        <Style x:Key="DataPointStyle" TargetType="DVC:AreaDataPoint">
+                                            <Setter Property="Background">
+                                                <Setter.Value>
+                                                    <LinearGradientBrush MappingMode="Absolute">
+                                                        <GradientStop Color="Red" Offset="0.2"/>
+                                                        <GradientStop Color="Green" Offset="0.45"/>
+                                                        <GradientStop Color="Blue" Offset="0.55"/>
+                                                        <GradientStop Color="Pink" Offset="0.8"/>
+                                                    </LinearGradientBrush>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ResourceDictionary>
+                                </DV:ResourceDictionaryCollection>
+                            </DVC:Chart.Palette>
+                        </DVC:Chart>
+                    </Grid>
 
                 <Grid Margin="10 0 0 0" Height="300" Background="BlueViolet" Width="450">
                     <Label Foreground="White">Attendance</Label>
@@ -171,7 +326,7 @@
                                 </Grid>
                             </StackPanel>
                         </StackPanel>
-                        
+
                     </Border>
                     <Border Width="290" Height="320" Background="White"
                   Margin="20 0 0 0">
@@ -206,14 +361,14 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="1">
-                                    <!--Numbers must bind--> 
-                                    <Label Foreground="#5A5F62">0</Label>
-                                    <Label Foreground="#5A5F62">0</Label>
-                                    <Label Foreground="#5A5F62">0</Label>
-                                    <Label Foreground="#5A5F62">0</Label>
-                                    <Label Foreground="#5A5F62">0</Label>
-                                    <Label Foreground="#5A5F62">0</Label>
-                                    <Label Foreground="#5A5F62">0</Label>
+                                    <!--Numbers must bind-->
+                                    <Label Foreground="#5A5F62" Content="{Binding LibraryMaterialCount,TargetNullValue=0}"></Label>
+                                    <Label Foreground="#5A5F62" Content="{Binding LessonMaterialCount,TargetNullValue=0}"></Label>
+                                    <Label Foreground="#5A5F62" Content="{Binding VideoMaterialCount}"></Label>
+                                    <Label Foreground="#5A5F62" Content="{Binding PresentationMaterialCount}"></Label>
+                                    <Label Foreground="#5A5F62" Content="{Binding TestMaterialCount}"></Label>
+                                    <Label Foreground="#5A5F62" Content="{Binding ArticleMaterialCount}"></Label>
+                                    <Label Foreground="#5A5F62" Content="{Binding SelfStudyMaterialCount}"></Label>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
@@ -232,4 +387,5 @@
             </StackPanel>
         </StackPanel>
     </Grid>
+    </ScrollViewer>
 </UserControl>

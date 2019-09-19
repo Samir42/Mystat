@@ -5,11 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mystat.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="1024">
+             d:DesignHeight="700" d:DesignWidth="1050">
     <Grid Background="#F1F6FA">
-        <StackPanel Margin="20" Background="White">
+        <StackPanel Margin="10 20 20 20" Background="White" Width="1000">
             <Label Style="{StaticResource HeaderLabel}" Margin="-20 0 0 20">Progress</Label>
-
             <StackPanel Margin="3">
                 <ComboBox 
                     HorizontalAlignment="Left"
@@ -51,10 +50,9 @@
                 <Border Margin="0 3 0 0" Height="15" Width="15" Background="#AA91FC"></Border>
                 <Label Margin="0 0 20 0">Review Work</Label>
             </StackPanel>
-            <WrapPanel Width="945">
-                <Border Opacity="0.5"  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#FFAAAA">
+            <WrapPanel x:Name="Container" Width="945">
+                <Border ToolTip="Salam" Opacity="0.5"  Style="{StaticResource BorderAnimation}" Margin="3" Width="80" Height="80" Background="#FFAAAA">
                     <Grid>
-
                         <!--Tarix dbden gelmelidir Must Bind-->
                         <Label HorizontalAlignment="Center" FontSize="12">20.04.2019</Label>
                         <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">20</Label>
@@ -63,7 +61,6 @@
                                 HorizontalAlignment="Right">
                             <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">12</Label>
                         </Border>
-
                     </Grid>
                 </Border>
 
@@ -334,8 +331,10 @@
                     </Grid>
                 </Border>
             </WrapPanel>
-            
-            <StackPanel></StackPanel>
+
+            <StackPanel>
+              
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -35,14 +35,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FirstFloor.ModernUI, Version=1.0.9.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NavigationDrawer\NavigationDrawerPopUpMenu2\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,17 +77,78 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NavigationDrawer\NavigationDrawerPopUpMenu2\bin\Debug\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdditionalClasses\ImageHelper.cs" />
+    <Compile Include="AdditionalClasses\ImageOperation.cs" />
+    <Compile Include="AdditionalClasses\MathHelper.cs" />
+    <Compile Include="AdditionalClasses\Network.cs" />
+    <Compile Include="AdditionalClasses\ResourceHelper.cs" />
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="DataAccess\HTTPServer\HTTPImageRepository.cs" />
+    <Compile Include="DataAccess\HTTPServer\HTTPMaterialRepository.cs" />
+    <Compile Include="DataAccess\HTTPServer\HTTPNewsRepository.cs" />
+    <Compile Include="DataAccess\HTTPServer\HTTPStudentRepository.cs" />
+    <Compile Include="DataAccess\HTTPServer\HTTPUnitOfWork.cs" />
+    <Compile Include="Domain\Abstractions\IImageRepository.cs" />
+    <Compile Include="Domain\Abstractions\IMaterialRepository.cs" />
+    <Compile Include="Domain\Abstractions\INewsRepository.cs" />
+    <Compile Include="Domain\Abstractions\IRepository.cs" />
+    <Compile Include="Domain\Abstractions\IStudentRepository.cs" />
+    <Compile Include="Domain\Abstractions\IUnitOfWork.cs" />
+    <Compile Include="Domain\Data\Admin.cs" />
+    <Compile Include="Domain\Data\Attendance.cs" />
+    <Compile Include="Domain\Data\AttendanceStatuss.cs" />
+    <Compile Include="Domain\Data\Comment.cs" />
+    <Compile Include="Domain\Data\Day.cs" />
+    <Compile Include="Domain\Data\DayOfWeek.cs" />
+    <Compile Include="Domain\Data\Event.cs" />
+    <Compile Include="Domain\Data\Exam.cs" />
+    <Compile Include="Domain\Data\Group.cs" />
+    <Compile Include="Domain\Data\Homework.cs" />
+    <Compile Include="Domain\Data\Lesson.cs" />
+    <Compile Include="Domain\Data\Material.cs" />
+    <Compile Include="Domain\Data\MaterialStatu.cs" />
+    <Compile Include="Domain\Data\News.cs" />
+    <Compile Include="Domain\Data\Point.cs" />
+    <Compile Include="Domain\Data\PointStatu.cs" />
+    <Compile Include="Domain\Data\Position.cs" />
+    <Compile Include="Domain\Data\Room.cs" />
+    <Compile Include="Domain\Data\Student.cs" />
+    <Compile Include="Domain\Data\StudentHomework.cs" />
+    <Compile Include="Domain\Data\Subject.cs" />
+    <Compile Include="Domain\Data\Teacher.cs" />
     <Compile Include="UserControls\ContactUC.xaml.cs">
       <DependentUpon>ContactUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\FeedbackUC.xaml.cs">
       <DependentUpon>FeedbackUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HomeworkItem.xaml.cs">
+      <DependentUpon>HomeworkItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\HomeWorkUC.xaml.cs">
       <DependentUpon>HomeWorkUC.xaml</DependentUpon>
@@ -76,25 +159,35 @@
     <Compile Include="UserControls\NewsUC.xaml.cs">
       <DependentUpon>NewsUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\OverdueHomeworkItemUC.xaml.cs">
+      <DependentUpon>OverdueHomeworkItemUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\PaymentUC.xaml.cs">
       <DependentUpon>PaymentUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ProgressUC.xaml.cs">
       <DependentUpon>ProgressUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ReviewedHomeworkItemUC.xaml.cs">
+      <DependentUpon>ReviewedHomeworkItemUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\RewardsUC.xaml.cs">
       <DependentUpon>RewardsUC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ScheduleUC.xaml.cs">
-      <DependentUpon>ScheduleUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SettingUC.xaml.cs">
       <DependentUpon>SettingUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SimpleUserControls\PersonalInfoUC.xaml.cs">
-      <DependentUpon>PersonalInfoUC.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\ContactViewModel.cs" />
+    <Compile Include="ViewModel\HomeworkItemViewModel.cs" />
+    <Compile Include="ViewModel\HomeworkViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\NewsViewModel.cs" />
+    <Compile Include="ViewModel\OverdueHomeworkItemViewModel.cs" />
+    <Compile Include="ViewModel\ProgressViewModel.cs" />
+    <Compile Include="ViewModel\ReviewedHomeworkItemViewModel.cs" />
+    <Compile Include="ViewModel\SettingViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -119,6 +212,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\HomeworkItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\HomeWorkUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,6 +228,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\OverdueHomeworkItemUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\PaymentUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,19 +240,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\ReviewedHomeworkItemUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\RewardsUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\ScheduleUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UserControls\SettingUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\SimpleUserControls\PersonalInfoUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,6 +282,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\myuser.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

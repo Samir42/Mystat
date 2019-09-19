@@ -7,17 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1024">
     <Grid Background="#F1F6FA">
-        <StackPanel Margin="10">
+        <StackPanel Margin="0 20 10 10" Background="White">
+            <StackPanel Margin="10">
+                
             <Label Style="{StaticResource HeaderLabel}" Margin="-10 0 0 20">News</Label>
 
-            <WrapPanel Width="1024">
+            <WrapPanel Width="1024" x:Name="NewsContainer">
                 <Border Height="200" Width="290" Margin="0 0 0 20"
                         Background="White" BorderThickness="0 3 0 0" BorderBrush="#28D4CA">
                     <Border.Effect>
                         <DropShadowEffect Color="#E0E5E9"/>
                     </Border.Effect>
 
-                    <Grid Margin="10">
+                    <Grid>
                         <Label Foreground="Black">
                             <AccessText TextWrapping="WrapWithOverflow">
                                 Avqustun 12-den 25-e kimi akademiya bagli olacaq
@@ -101,6 +103,7 @@
                 </Border>
              
             </WrapPanel>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -3,38 +3,218 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Mystat"
         
         xmlns:uc="clr-namespace:Mystat.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1024" WindowStartupLocation="CenterScreen">
-    <ScrollViewer>
-        <Grid Background="#F1F6FA">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="15*"/>
-            </Grid.ColumnDefinitions>
+        Title="MainWindow" Height="700" Width="1050"  WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
+        </EventTrigger>
+    </Window.Triggers>
 
-            <StackPanel Grid.Column="0" Background="Black"></StackPanel>
+    <Grid Background="#F1F6FA">
+        <Grid x:Name="Bottom"  HorizontalAlignment="Right" Background="White"  VerticalAlignment="Bottom" Height="600" Width="950"/>
+        <Grid Height="70" VerticalAlignment="Top" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+            </Grid.Effect>
+            <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
+                    <StackPanel Width="150">
+                        <Button Content="Settings"/>
+                        <Button Content="Account"/>
+                        <Button Content="Help"/>
+                        <Separator/>
+                        <Button Content="Logout"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>-->
 
-            <StackPanel Grid.Column="1">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="80"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Grid Margin="90 0 0 0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Border HorizontalAlignment="Center"  Grid.Column="0" Background="Black" CornerRadius="30" Height="60" Width="60">
+                        <Image Margin="0 0 0 10" Height="50" Width="50" Stretch="Uniform" Source="/Media/myuser.png" />
+                    </Border>
 
-                    <StackPanel Grid.Row="0" Background="Red">
+                    <Label HorizontalAlignment="Center" Grid.Column="1" Margin="20 0 0 0" VerticalAlignment="Center" Content="{Binding Fullname}"></Label>
+                    <Label HorizontalAlignment="Center" Grid.Column="2" Margin="20 0 0 0" VerticalAlignment="Center" Content="{Binding GroupName}"></Label>
 
+                    <StackPanel HorizontalAlignment="Center" Grid.Column="3" Orientation="Horizontal">
+                        <Label Margin="20 0 0 0" VerticalAlignment="Center" Content="{Binding GeneralPoint}"></Label>
+                        <materialDesign:PackIcon Kind="Star" Foreground="#A67AFA" Height="30" Width="30" VerticalAlignment="Center"/>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="1">
-                        <uc:ProgressUC/>
-                    </StackPanel>
+                    <Border HorizontalAlignment="Center" Grid.Column="4" CornerRadius="10" Margin="20 0 0 0"
+                        Height="40" Width="220" VerticalAlignment="Center" Background="White">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                <Label Margin="20 0 0 0" VerticalAlignment="Center" Content="{Binding DiamondCount}"></Label>
+                                <materialDesign:PackIcon Kind="DiamondStone" Foreground="#76A2EC"
+                                                     Height="30" Width="30" VerticalAlignment="Center"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                <Label Margin="20 0 0 0" VerticalAlignment="Center" Content="{Binding CoinCount}"></Label>
+                                <materialDesign:PackIcon Kind="Coin" Foreground="#FFC730" Height="30" Width="30" VerticalAlignment="Center"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
                 </Grid>
-
             </StackPanel>
         </Grid>
-    </ScrollViewer>
+        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF31577E">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
+            </Grid.Effect>
+            <StackPanel>
+                <Grid Height="150" Background="White" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Button x:Name="ButtonOpenMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonOpenMenu_Click">
+                        <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
+                    </Button>
+                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCloseMenu_Click">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
+                    </Button>
+
+                    <Image Height="80" VerticalAlignment="Bottom"/>
+                </Grid>
+                <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem x:Name="ItemHome" Height="60">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Selected">
+                                <i:InvokeCommandAction Command="{Binding LoadHomeCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Home" Width="25" Height="25" Margin="15"/>
+                            <TextBlock Text="Main" VerticalAlignment="Center" Margin="20 10"/>
+
+
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="SomeItem" Height="60">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Selected">
+                                <i:InvokeCommandAction Command="{Binding LoadHomeworkCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="NotebookMultiple" Width="25" Height="25" Margin="15"/>
+                            <TextBlock Text="Homework" VerticalAlignment="Center" Margin="20 10"/>
+
+
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemCreate" Height="60">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Selected">
+                                <i:InvokeCommandAction Command="{Binding LoadProgressCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ChartBar" Width="25" Height="25" Margin="15"/>
+                            <TextBlock Text="Progress" VerticalAlignment="Center" Margin="20 10"/>
+
+
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Selected">
+                                <i:InvokeCommandAction Command="{Binding LoadNewsCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Newspaper" Width="25" Height="25" Margin="15"/>
+                            <TextBlock Text="News" VerticalAlignment="Center" Margin="20 10"/>
+
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Selected">
+                                <i:InvokeCommandAction Command="{Binding LoadPaymentCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Payment" Width="25" Height="25" Margin="15"/>
+                            <TextBlock Text="Payment" VerticalAlignment="Center" Margin="20 10"/>
+
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Selected">
+                                <i:InvokeCommandAction Command="{Binding LoadSettingsCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Settings" Width="25" Height="25" Margin="15"/>
+                            <TextBlock Text="Settings" VerticalAlignment="Center" Margin="20 10"/>
+
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="60">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Selected">
+                                <i:InvokeCommandAction Command="{Binding LoadContactCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Information" Width="25" Height="25" Margin="15"/>
+                            <TextBlock Text="Contact Info" VerticalAlignment="Center" Margin="20 10"/>
+
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
 </Window> 
