@@ -1,0 +1,22 @@
+﻿<Window x:Class="Mystat.View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mystat.View"
+        xmlns:uc="clr-namespace:Mystat.UserControls"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="700" Width="1024" WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Media/Wallpaper.jpg" 
+                        Opacity="1" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <StackPanel Margin="0 80" x:Name="Entry">
+            <uc:LoginUC />
+        </StackPanel>
+    </Grid>
+</Window>

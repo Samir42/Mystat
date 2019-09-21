@@ -1,5 +1,6 @@
 ﻿using Mystat.Command;
 using Mystat.UserControls;
+using Mystat.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace Mystat.ViewModel
 {
     public class MainWindowViewModel : BaseViewModel
     {
+        public LoginWindow Lwd { get; set; }
+        public MainWindow Mwd { get; set; }
         public Grid MainGrid { get; set; }
         public RelayCommand LoadHomeCommand => new RelayCommand(e =>
         {
@@ -21,6 +24,14 @@ namespace Mystat.ViewModel
             MainViewModel pvm = new MainViewModel();
             puc.DataContext = pvm;
             MainGrid.Children.Add(puc);
+        });
+
+        public RelayCommand GoBackToLoginCommand => new RelayCommand(e =>
+        {
+            LoginWindow lwd = new LoginWindow();
+            lwd.Show();
+            this.Mwd.Close();
+
         });
 
         public RelayCommand LoadHomeworkCommand => new RelayCommand(e =>

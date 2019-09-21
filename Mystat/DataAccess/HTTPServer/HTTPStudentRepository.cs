@@ -12,6 +12,12 @@ namespace Mystat.DataAccess.HTTPServer
 {
     public class HTTPStudentRepository : IStudentRepository
     {
+        public Student GetStudentByUsername(string username)
+        {
+            var res = App.db.StudentRepository.GetAll().FirstOrDefault(x => x.Username == username);
+
+            return App.db.StudentRepository.GetStudentById(res.Id);
+        }
         public String GetPointResponse(int id)
         {
             String responsestring = "";
@@ -23,7 +29,19 @@ namespace Mystat.DataAccess.HTTPServer
             task.Wait();
 
             return responsestring;
+        }
 
+        public String GetExistingResponse(string username, string password)
+        {
+            String responsestring = "";
+            Task task = Task.Run(async () =>
+            {
+                responsestring = await App.client.GetStringAsync($"http://{App.ip}:{App.Port}/UserExist/{username}/{password}");
+            });
+
+            task.Wait();
+
+            return responsestring;
         }
 
         public String GetStudentResponse(int id)
@@ -35,15 +53,33 @@ namespace Mystat.DataAccess.HTTPServer
             });
             task.Wait();
             return responsestring;
-
         }
 
+
+        public bool Exist(string username, string password)
+        {
+            var data = GetExistingResponse(username, password);
+
+            return JsonConvert.DeserializeObject<bool>(data);
+        }
         public String GetStudentGroupResponse(string group)
         {
             String responsestring = "";
             Task task = Task.Run(async () =>
             {
                 responsestring = await App.client.GetStringAsync($"http://{App.ip}:{App.Port}/GetStudentByGroup/{group}");
+            });
+            task.Wait();
+            return responsestring;
+
+        }
+
+        public String GetAllStudents()
+        {
+            String responsestring = "";
+            Task task = Task.Run(async () =>
+            {
+                responsestring = await App.client.GetStringAsync($"http://{App.ip}:{App.Port}/GetStudents/-1");
             });
             task.Wait();
             return responsestring;
@@ -67,7 +103,9 @@ namespace Mystat.DataAccess.HTTPServer
 
         public ICollection<Student> GetAll()
         {
-            throw new NotImplementedException();
+            var data = GetAllStudents();
+
+            return JsonConvert.DeserializeObject<List<Student>>(data);
         }
 
         public ICollection<Point> GetStudentPointsById(int id)
@@ -106,8 +144,6 @@ namespace Mystat.DataAccess.HTTPServer
 
         public int GetCurrentStudentGeneralPointById(int id)
         {
-           
-
             var result = App.db.StudentRepository.GetStudentsByGroup(App.CurrentStudent.Group.Name)
                                                 .GroupBy(g => g.Username)
                                                 .Select(x => new

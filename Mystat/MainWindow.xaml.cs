@@ -1,4 +1,5 @@
 ﻿using Mystat.UserControls;
+using Mystat.View;
 using Mystat.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -22,11 +23,15 @@ namespace Mystat
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public LoginWindow Lwd { get; set; }
+        public MainWindowViewModel vm { get; set; }
+        public MainWindow(MainWindowViewModel vm)
         {
             InitializeComponent();
-            MainWindowViewModel vm = new MainWindowViewModel();
+
+            this.vm = vm;
             vm.MainGrid = Bottom;
+            this.DataContext = this.vm;
 
             Bottom.Children.Clear();
             MainUC uc = new MainUC();

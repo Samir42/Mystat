@@ -26,7 +26,7 @@ namespace Mystat
         public App()
         {
             db = new HTTPUnitOfWork();
-            ip = "10.1.16.2";
+            ip = "10.2.11.56";
             Port = "27000";
             CurrentStudent = db.StudentRepository.GetStudentById(1);
         }

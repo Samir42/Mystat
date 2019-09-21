@@ -9,7 +9,8 @@
         
         xmlns:uc="clr-namespace:Mystat.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1050"  WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="700" Width="1050"  WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -197,6 +198,20 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Information" Width="25" Height="25" Margin="15"/>
                             <TextBlock Text="Contact Info" VerticalAlignment="Center" Margin="20 10"/>
+
+                        </StackPanel>
+                    </ListViewItem>
+
+
+                    <ListViewItem Height="60">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Selected">
+                                <i:InvokeCommandAction Command="{Binding GoBackToLoginCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Logout"  Width="25" Height="25" Margin="15"/>
+                            <TextBlock Text="Logout" VerticalAlignment="Center" Margin="20 10"/>
 
                         </StackPanel>
                     </ListViewItem>

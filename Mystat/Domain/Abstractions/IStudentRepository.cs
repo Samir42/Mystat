@@ -15,6 +15,7 @@ namespace Mystat.Domain.Abstractions
         int GetCurrentStudentGeneralPointById(int id);
         ICollection<Student> GetStudentsByGroup(string group);
         int GetGroupStudentsGeneralPointById(int id);
-        
+        bool Exist(string username, string password);
+        Student GetStudentByUsername(string username);
     }
 }

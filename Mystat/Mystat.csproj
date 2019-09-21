@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FirstFloor.ModernUI, Version=1.0.9.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
       <HintPath>..\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
@@ -156,6 +159,9 @@
     <Compile Include="UserControls\HomeWorkUC.xaml.cs">
       <DependentUpon>HomeWorkUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\LoginUC.xaml.cs">
+      <DependentUpon>LoginUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MainUC.xaml.cs">
       <DependentUpon>MainUC.xaml</DependentUpon>
     </Compile>
@@ -170,6 +176,9 @@
     </Compile>
     <Compile Include="UserControls\ProgressUC.xaml.cs">
       <DependentUpon>ProgressUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RepairPasswordUC.xaml.cs">
+      <DependentUpon>RepairPasswordUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ReviewedHomeworkItemUC.xaml.cs">
       <DependentUpon>ReviewedHomeworkItemUC.xaml</DependentUpon>
@@ -191,7 +200,12 @@
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\NewsViewModel.cs" />
     <Compile Include="ViewModel\ProgressViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\RepairPasswordViewModel.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
+    <Compile Include="View\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -224,6 +238,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\LoginUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\MainUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -244,6 +262,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\RepairPasswordUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ReviewedHomeworkItemUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -257,6 +279,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UnderReviewHomeworkItemUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -289,10 +315,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\" />
+    <Resource Include="Media\entry.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Media\myuser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\Wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
