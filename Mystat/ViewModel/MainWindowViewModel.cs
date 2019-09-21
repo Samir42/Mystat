@@ -28,10 +28,12 @@ namespace Mystat.ViewModel
             MainGrid.Children.Clear();
             HomeWorkUC uc = new HomeWorkUC();
             HomeworkViewModel vm = new HomeworkViewModel();
+            vm.MainGrid = this.MainGrid;
 
             vm.CurrentContainer = uc.CurrentContainer;
             vm.OverdueContainer = uc.OverdueContainer;
             vm.ReviewedContainer = uc.ReviewedContainer;
+            vm.UnderReviewContainer = uc.UnderReviewContainer;
 
             vm.LoadViewControls();
             uc.DataContext = vm;

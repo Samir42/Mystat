@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:Mystat.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="300" Margin="5">
-    <Grid Width="300" Height="150"> 
+    <Grid Width="300" Height="150">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="2.5*"/>
@@ -22,19 +22,21 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Label Foreground="Gray" Grid.Column="0">JavaScript 5</Label>
+            <Label Foreground="Gray" Grid.Column="0" Content="{Binding Content}"></Label>
 
-            
+
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignCentres" StaysOpen="False" 
                                         HorizontalAlignment="Right"  Height="30" Width="30">
                     <materialDesign:PopupBox.ToggleContent>
                         <materialDesign:PackIcon Kind="CommentMultipleOutline" />
                     </materialDesign:PopupBox.ToggleContent>
-                    <StackPanel>
-                        <TextBlock Text="Uwaglar ev tapwirigini elediz ?" />
-                        <TextBlock Text="Test2" />
-                        <TextBlock Text="Test3" />
+                    <StackPanel Background="White">
+                        <Label>
+                            <AccessText TextWrapping="WrapWithOverflow">
+                                Ders oxuyun !
+                            </AccessText>
+                        </Label>
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
@@ -44,12 +46,21 @@
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignCentres" StaysOpen="False" 
                                          Margin="10,0, 20, 0" Height="30" Width="30">
                     <materialDesign:PopupBox.ToggleContent>
-                        <materialDesign:PackIcon Kind="CommentMultipleOutline" />
+                        <materialDesign:PackIcon Kind="InformationCircleOutline" />
                     </materialDesign:PopupBox.ToggleContent>
-                    <StackPanel>
-                        <TextBlock Text="Uwaglar ev tapwirigini elediz ?" />
-                        <TextBlock Text="Test2" />
-                        <TextBlock Text="Test3" />
+                    <StackPanel Background="White" Width="200" Height="200">
+                        <TextBlock FontSize="22" Text="{Binding Content}"></TextBlock>
+                        <Separator />
+
+                        <TextBlock Foreground="#A3B6D8" FontSize="15">Issued</TextBlock>
+                        <TextBlock FontSize="20" Text="{Binding SentAt,StringFormat=d}"></TextBlock>
+                        <TextBlock Foreground="#A3B6D8" FontSize="15">Subject</TextBlock>
+                        <TextBlock FontSize="20" Text="JS"></TextBlock>
+                        <TextBlock Foreground="#A3B6D8" FontSize="15">Teacher</TextBlock>
+                        <TextBlock FontSize="20" Text="{Binding TeacherName}"></TextBlock>
+
+
+
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
@@ -58,8 +69,9 @@
 
         <Grid Background="White" Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="121*"/>
+                <ColumnDefinition Width="29*"/>
             </Grid.ColumnDefinitions>
 
 
@@ -68,10 +80,10 @@
                     <materialDesign:PackIcon Height="50" Width="50" Foreground="#31577E"  Kind="FileDownload"/>
                 </Button>
 
-                
+
             </Grid>
-            
-            <Grid Grid.Column="1">
+
+            <Grid Grid.Column="1" Grid.ColumnSpan="2">
                 <Button Width="50" BorderThickness="0"  Command="{Binding UploadFileCommand}" Height="60" Background="{x:Null}">
                     <materialDesign:PackIcon Height="50" Width="50" Foreground="#31577E"  Kind="FileUpload"/>
                 </Button>
@@ -80,11 +92,11 @@
             </Grid>
 
         </Grid>
-        
+
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#31577E">
-            <Label Foreground="White" VerticalAlignment="Center" FontSize="20">09.12.1999</Label>
+            <Label Foreground="White" VerticalAlignment="Center" FontSize="20" Content="{Binding EndAt,StringFormat=d}"></Label>
             <materialDesign:PackIcon VerticalAlignment="Center" Foreground="White" Kind="ArrowDownBoldHexagonOutline" Height="25" Width="30"/>
         </StackPanel>
-        
+
     </Grid>
 </UserControl>

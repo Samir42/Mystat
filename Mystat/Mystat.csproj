@@ -102,6 +102,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdditionalClasses\FileHelper.cs" />
     <Compile Include="AdditionalClasses\ImageHelper.cs" />
     <Compile Include="AdditionalClasses\ImageOperation.cs" />
     <Compile Include="AdditionalClasses\MathHelper.cs" />
@@ -111,12 +112,14 @@
     <Compile Include="DataAccess\HTTPServer\HTTPImageRepository.cs" />
     <Compile Include="DataAccess\HTTPServer\HTTPMaterialRepository.cs" />
     <Compile Include="DataAccess\HTTPServer\HTTPNewsRepository.cs" />
+    <Compile Include="DataAccess\HTTPServer\HTTPStudentHomeworkRepository.cs" />
     <Compile Include="DataAccess\HTTPServer\HTTPStudentRepository.cs" />
     <Compile Include="DataAccess\HTTPServer\HTTPUnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\IImageRepository.cs" />
     <Compile Include="Domain\Abstractions\IMaterialRepository.cs" />
     <Compile Include="Domain\Abstractions\INewsRepository.cs" />
     <Compile Include="Domain\Abstractions\IRepository.cs" />
+    <Compile Include="Domain\Abstractions\IStudentHomeworkRepository.cs" />
     <Compile Include="Domain\Abstractions\IStudentRepository.cs" />
     <Compile Include="Domain\Abstractions\IUnitOfWork.cs" />
     <Compile Include="Domain\Data\Admin.cs" />
@@ -177,6 +180,9 @@
     <Compile Include="UserControls\SettingUC.xaml.cs">
       <DependentUpon>SettingUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UnderReviewHomeworkItemUC.xaml.cs">
+      <DependentUpon>UnderReviewHomeworkItemUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\HomeworkItemViewModel.cs" />
@@ -184,9 +190,7 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\NewsViewModel.cs" />
-    <Compile Include="ViewModel\OverdueHomeworkItemViewModel.cs" />
     <Compile Include="ViewModel\ProgressViewModel.cs" />
-    <Compile Include="ViewModel\ReviewedHomeworkItemViewModel.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -249,6 +253,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\SettingUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UnderReviewHomeworkItemUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

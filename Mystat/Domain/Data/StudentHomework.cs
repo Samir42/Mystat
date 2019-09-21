@@ -17,9 +17,13 @@ namespace Mystat.Domain.Data
         public int Id { get; set; }
         public int StudentId { get; set; }
         public int HomeworkId { get; set; }
-        public Nullable<System.DateTime> SentAt { get; set; }
-    
-        public virtual Homework Homework { get; set; }
-        public virtual Student Student { get; set; }
+        public DateTime? SentAt { get; set; }
+        public string File { get; set; }
+        public byte[] FileBytes { get; set; }
+        public bool? Checked { get; set; }
+
+        public  Homework Homework { get; set; }
+        public  Student Student { get; set; }
+        public  ICollection<Point> Points { get; set; }
     }
 }

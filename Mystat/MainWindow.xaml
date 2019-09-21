@@ -178,18 +178,6 @@
                     <ListViewItem Height="60">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Selected">
-                                <i:InvokeCommandAction Command="{Binding LoadPaymentCommand}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Payment" Width="25" Height="25" Margin="15"/>
-                            <TextBlock Text="Payment" VerticalAlignment="Center" Margin="20 10"/>
-
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Selected">
                                 <i:InvokeCommandAction Command="{Binding LoadSettingsCommand}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>

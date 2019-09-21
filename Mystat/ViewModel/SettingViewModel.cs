@@ -34,6 +34,8 @@ namespace Mystat.ViewModel
             this.Student.Points = new List<Point>();
             this.Student.Comments = new List<Comment>();
             App.db.StudentRepository.Update(this.Student);
+
+            App.CurrentStudent = App.db.StudentRepository.GetStudentById(App.CurrentStudent.Id);
         });
 
         public SettingViewModel()

@@ -8,9 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="1024">
     <ScrollViewer>
-
-
-        <Grid Background="#F1F6FA">
+        <Grid Background="#F1F6FA" Margin="-10 0 0 0">
             <StackPanel Margin="5">
                 <Label Style="{StaticResource HeaderLabel}">Homework</Label>
 
@@ -59,22 +57,43 @@
 
                     <Label>All Tasks:</Label>
                     <!--Must Bind-->
-                    <Label>95</Label>
+                    <Label Content="{Binding AllTaskCount}"></Label>
                 </StackPanel>
 
                 <StackPanel Margin="10 20 0 0">
-                    <Label Margin="10 0 0 20">Current:</Label>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="10 0 0 20">Current:</Label>
+                        <Label Content="{Binding CurrentCount}"></Label>
+
+                    </StackPanel>
+
                     <WrapPanel x:Name="CurrentContainer" Width="1024">
-                        
                     </WrapPanel>
 
-                    <Label Margin="10 0 0 20">Overdue:</Label>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="10 0 0 20">Overdue:</Label>
+                        <Label Content="{Binding OverdueCount}"></Label>
+
+                    </StackPanel>
                     <WrapPanel x:Name="OverdueContainer" Width="1024">
 
                     </WrapPanel>
 
-                    <Label Margin="10 0 0 20">Reviewed:</Label>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="10 0 0 20">Reviewed:</Label>
+                        <Label Content="{Binding ReviewedCount}"></Label>
+
+                    </StackPanel>
                     <WrapPanel x:Name="ReviewedContainer" Width="1024">
+
+                    </WrapPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="10 0 0 20">Under review:</Label>
+                        <Label Content="{Binding UnderReviewCount}"></Label>
+
+                    </StackPanel>
+                    <WrapPanel x:Name="UnderReviewContainer" Width="1024">
 
                     </WrapPanel>
                 </StackPanel>

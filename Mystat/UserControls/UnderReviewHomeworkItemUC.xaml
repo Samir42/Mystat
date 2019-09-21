@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Mystat.UserControls.OverdueHomeworkItemUC"
+﻿<UserControl x:Class="Mystat.UserControls.UnderReviewHomeworkItemUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -73,7 +73,7 @@
 
             <Grid Grid.Column="0">
                 <Button  Width="50" Height="60" Command="{Binding DownloadFileCommand}" BorderThickness="0" Background="{x:Null}">
-                    <materialDesign:PackIcon Height="50" Width="50" Foreground="DarkRed"  Kind="FileDownload"/>
+                    <materialDesign:PackIcon Height="50" Width="50" Foreground="DarkOrange"  Kind="FileDownload"/>
                 </Button>
 
 
@@ -81,19 +81,18 @@
 
             <Grid Grid.Column="2">
                 <Button Width="50" BorderThickness="0"  Command="{Binding UploadFileCommand}" Height="60" Background="{x:Null}">
-                    <materialDesign:PackIcon Height="50" Width="50" Foreground="DarkRed"  Kind="FileUpload"/>
+                    <materialDesign:PackIcon Height="50" Width="50" Foreground="DarkOrange"  Kind="FileUpload"/>
                 </Button>
             </Grid>
 
-            <materialDesign:PackIcon Grid.Column="1" Height="60" Width="60" Kind="ClockAlertOutline" HorizontalAlignment="Center"
-                                         VerticalAlignment="Center" Foreground="Gray"/>
 
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="DarkRed">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="DarkOrange">
             <Label Foreground="White" VerticalAlignment="Center" FontSize="20" Content="{Binding EndAt,StringFormat=d}"></Label>
             <materialDesign:PackIcon VerticalAlignment="Center" Foreground="White" Kind="ArrowDownBoldHexagonOutline" Height="25" Width="30"/>
         </StackPanel>
 
     </Grid>
+
 </UserControl>

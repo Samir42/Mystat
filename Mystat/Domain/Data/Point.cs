@@ -20,9 +20,11 @@ namespace Mystat.Domain.Data
         public int StudentId { get; set; }
         public Nullable<int> Point1 { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-    
+        public Nullable<int> StudentHomeworkId { get; set; }
+
         public virtual Lesson Lesson { get; set; }
         public virtual PointStatu PointStatu { get; set; }
         public virtual Student Student { get; set; }
+        public virtual StudentHomework StudentHomework { get; set; }
     }
 }

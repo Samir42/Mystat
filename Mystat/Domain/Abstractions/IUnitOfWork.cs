@@ -12,5 +12,6 @@ namespace Mystat.Domain.Abstractions
         INewsRepository NewsRepository { get; }
         IStudentRepository StudentRepository { get; }
         IMaterialRepository MaterialRepository { get; }
+        IStudentHomeworkRepository StudentHomeworkRepository { get; }
     }
 }

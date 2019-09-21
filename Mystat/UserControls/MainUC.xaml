@@ -236,39 +236,6 @@
                     </Border>
                 </WrapPanel>
             </StackPanel>
-            <WrapPanel Margin="10">
-                <Grid Height="300" Background="Red" Width="450">
-                        <DVC:Chart   Canvas.Top="80" Canvas.Left="10" Name="mcChart" 
-           Width="450" Height="300" 
-           Background="YellowGreen" Foreground="DarkBlue" 
-           Title="Area Chart">
-                            <DVC:Chart.Palette>
-                                <DV:ResourceDictionaryCollection>
-                                    <ResourceDictionary>
-                                        <Style x:Key="DataPointStyle" TargetType="DVC:AreaDataPoint">
-                                            <Setter Property="Background">
-                                                <Setter.Value>
-                                                    <LinearGradientBrush MappingMode="Absolute">
-                                                        <GradientStop Color="Red" Offset="0.2"/>
-                                                        <GradientStop Color="Green" Offset="0.45"/>
-                                                        <GradientStop Color="Blue" Offset="0.55"/>
-                                                        <GradientStop Color="Pink" Offset="0.8"/>
-                                                    </LinearGradientBrush>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </ResourceDictionary>
-                                </DV:ResourceDictionaryCollection>
-                            </DVC:Chart.Palette>
-                        </DVC:Chart>
-                    </Grid>
-
-                <Grid Margin="10 0 0 0" Height="300" Background="BlueViolet" Width="450">
-                    <Label Foreground="White">Attendance</Label>
-                </Grid>
-            </WrapPanel>
-
-
             <StackPanel Orientation="Horizontal" Margin="10">
                 <WrapPanel>
 
@@ -285,7 +252,7 @@
                                 </StackPanel>
                             </StackPanel>
 
-                            <Label FontSize="40" HorizontalAlignment="Center" Foreground="#6376BF">5</Label>
+                                <Label FontSize="40" HorizontalAlignment="Center" Foreground="#6376BF">4</Label>
                             <Label HorizontalAlignment="Center">All Tasks</Label>
 
                             <StackPanel Margin="30" Background="#F5F8FA" Height="150">
@@ -302,25 +269,25 @@
 
                                     <StackPanel Grid.Column="0" Grid.Row="0">
                                         <!--Must bind-->
-                                        <Label Foreground="#FA5873">0</Label>
+                                            <Label Foreground="#FA5873">1</Label>
                                         <Label>Current</Label>
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="0" Grid.Row="1">
                                         <!--Must bind-->
-                                        <Label Foreground="#1ACCC1">0</Label>
+                                            <Label Foreground="#1ACCC1">0</Label>
                                         <Label FontSize="15">Under Review</Label>
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="1" Grid.Row="0">
                                         <!--Must bind-->
-                                        <Label Foreground="#FFC730">0</Label>
+                                            <Label Foreground="#FFC730">2</Label>
                                         <Label>Reviewed</Label>
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="1" Grid.Row="1">
                                         <!--Must bind-->
-                                        <Label Foreground="#AA91FC">0</Label>
+                                            <Label Foreground="#AA91FC">1</Label>
                                         <Label>Overdue</Label>
                                     </StackPanel>
                                 </Grid>
@@ -371,16 +338,6 @@
                                     <Label Foreground="#5A5F62" Content="{Binding SelfStudyMaterialCount}"></Label>
                                 </StackPanel>
                             </Grid>
-                        </StackPanel>
-                    </Border>
-
-                    <Border Width="290" Height="320" Background="White"
-                  Margin="20 0 0 0">
-                        <Border.Effect>
-                            <DropShadowEffect Color="#E0E5E9"/>
-                        </Border.Effect>
-                        <StackPanel Margin="10">
-                            <Label Style="{StaticResource HeaderLabelMainUC}">Rewards</Label>
                         </StackPanel>
                     </Border>
                 </WrapPanel>

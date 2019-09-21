@@ -17,11 +17,11 @@ namespace Mystat.Domain.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Student()
         {
-            this.Attendances = new HashSet<Attendance>();
-            this.Comments = new HashSet<Comment>();
-            this.Exams = new HashSet<Exam>();
-            this.Points = new HashSet<Point>();
-            this.StudentHomeworks = new HashSet<StudentHomework>();
+            this.Attendances = new List<Attendance>();
+            this.Comments = new List<Comment>();
+            this.Exams = new List<Exam>();
+            this.Points = new List<Point>();
+            this.StudentHomeworks = new List<StudentHomework>();
         }
     
         public int Id { get; set; }

@@ -9,7 +9,7 @@ namespace Mystat.DataAccess.HTTPServer
 {
     public class HTTPUnitOfWork : IUnitOfWork
     {
-
+        public IStudentHomeworkRepository StudentHomeworkRepository => new HTTPStudentHomeworkRepository();
         public INewsRepository NewsRepository => new HTTPNewsRepository();
 
         public IStudentRepository StudentRepository => new HTTPStudentRepository();
