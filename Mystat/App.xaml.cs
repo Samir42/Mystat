@@ -22,11 +22,10 @@ namespace Mystat
         public static IUnitOfWork db;
         public static string ip;
         public static string Port;
-
         public App()
         {
             db = new HTTPUnitOfWork();
-            ip = "10.2.11.56";
+            ip = "192.168.1.104";
             Port = "27000";
             CurrentStudent = db.StudentRepository.GetStudentById(1);
         }

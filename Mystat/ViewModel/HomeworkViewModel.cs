@@ -12,42 +12,35 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Mystat.ViewModel
-{
-    public class HomeworkViewModel : BaseViewModel
-    {
+namespace Mystat.ViewModel {
+    public class HomeworkViewModel : BaseViewModel {
         public WrapPanel CurrentContainer { get; set; }
         public WrapPanel ReviewedContainer { get; set; }
         public WrapPanel UnderReviewContainer { get; set; }
         public WrapPanel OverdueContainer { get; set; }
         public Grid MainGrid { get; set; }
 
-        public HomeworkViewModel()
-        {
+        public HomeworkViewModel() {
             Initialize();
         }
 
 
-        public void Initialize()
-        {
+        public void Initialize() {
             StudentHomeworks = new ObservableCollection<StudentHomework>(App.CurrentStudent.StudentHomeworks);
 
-            foreach (var item in StudentHomeworks)
-            {
+            foreach (var item in StudentHomeworks) {
                 item.Points = new List<Domain.Data.Point>(App.CurrentStudent.Points.Where(x => x.StudentHomeworkId == item.Id));
             }
         }
 
-        public void LoadViewControls()
-        {
+        public void LoadViewControls() {
             CurrentContainer.Children.Clear();
             ReviewedContainer.Children.Clear();
             OverdueContainer.Children.Clear();
             UnderReviewContainer.Children.Clear();
 
 
-            foreach (var homework in StudentHomeworks)
-            {
+            foreach (var homework in StudentHomeworks) {
                 HomeworkItemViewModel vm = new HomeworkItemViewModel();
                 vm.MainGrid = this.MainGrid;
 
@@ -66,27 +59,22 @@ namespace Mystat.ViewModel
                 if (point != null)
                     vm.Point = point.Point1.Value;
 
-
-                if (homework.Homework.LastDay > DateTime.Now && point == null && !endsWith_pdf && !endsWith_txt)
-                {
+                if (homework.Homework.LastDay > DateTime.Now && point == null && !endsWith_pdf && !endsWith_txt) {
                     HomeworkItem uc = new HomeworkItem();
                     uc.DataContext = vm;
                     CurrentContainer.Children.Add(uc);
                 }
-                else if (homework.Homework.LastDay < DateTime.Now && point == null && !endsWith_pdf && !endsWith_txt)
-                {
+                else if (homework.Homework.LastDay < DateTime.Now && point == null && !endsWith_pdf && !endsWith_txt) {
                     OverdueHomeworkItemUC uc = new OverdueHomeworkItemUC();
                     uc.DataContext = vm;
                     OverdueContainer.Children.Add(uc);
                 }
-                else if (endsWith_pdf || endsWith_txt && homework.Checked.Value && point != null)
-                {
+                else if (endsWith_pdf || endsWith_txt && homework.Checked.Value && point != null) {
                     ReviewedHomeworkItemUC uc = new ReviewedHomeworkItemUC();
                     uc.DataContext = vm;
                     ReviewedContainer.Children.Add(uc);
                 }
-                else if (endsWith_pdf || endsWith_txt && !homework.Checked.Value)
-                {
+                else if (endsWith_pdf || endsWith_txt && !homework.Checked.Value) {
                     UnderReviewHomeworkItemUC uc = new UnderReviewHomeworkItemUC();
                     uc.DataContext = vm;
                     UnderReviewContainer.Children.Add(uc);
@@ -102,20 +90,18 @@ namespace Mystat.ViewModel
 
         private int allTaskCount;
 
-        public int AllTaskCount
-        {
-            get
-            {
+        public int AllTaskCount {
+            get {
                 return UnderReviewCount + CurrentCount +
-                       OverdueCount + ReviewedCount; }
+                       OverdueCount + ReviewedCount;
+            }
             set { allTaskCount = value; }
         }
 
 
         private int underReviewCount;
 
-        public int UnderReviewCount
-        {
+        public int UnderReviewCount {
             get { return UnderReviewContainer.Children.Count; }
             set { underReviewCount = value; }
         }
@@ -123,24 +109,21 @@ namespace Mystat.ViewModel
 
         private int currentCount;
 
-        public int CurrentCount
-        {
+        public int CurrentCount {
             get { return CurrentContainer.Children.Count; }
             set { currentCount = value; }
         }
 
         private int overdueCount;
 
-        public int OverdueCount
-        {
+        public int OverdueCount {
             get { return OverdueContainer.Children.Count; }
             set { overdueCount = value; }
         }
 
         private int reviewedCount;
 
-        public int ReviewedCount
-        {
+        public int ReviewedCount {
             get { return ReviewedContainer.Children.Count; }
             set { reviewedCount = value; }
         }
@@ -148,11 +131,9 @@ namespace Mystat.ViewModel
 
         private ObservableCollection<StudentHomework> studentHomeworks;
 
-        public ObservableCollection<StudentHomework> StudentHomeworks
-        {
+        public ObservableCollection<StudentHomework> StudentHomeworks {
             get { return studentHomeworks; }
-            set
-            {
+            set {
                 if (value == studentHomeworks) return;
 
                 studentHomeworks = value;

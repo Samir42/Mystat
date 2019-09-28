@@ -45,7 +45,7 @@ namespace Mystat.ViewModel
 
             }
             else MessageBox.Show("No!");
-        },x=> Login != "" && Password != "");
+        });
 
        
 
